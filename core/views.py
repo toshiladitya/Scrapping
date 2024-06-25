@@ -11,10 +11,10 @@ from core.models import Configurations
 from django.views.decorators.csrf import csrf_exempt
 
 # Configure logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
-config = Configurations.objects.first()
-HUNTER_API_KEY = config.config.get('hunter_api_key')
+# config = Configurations.objects.first()
+# HUNTER_API_KEY = config.config.get('hunter_api_key', None)
 
 def get_emails_from_hunter(domain):
     url = f"https://api.hunter.io/v2/domain-search?domain={domain}&api_key={HUNTER_API_KEY}"
